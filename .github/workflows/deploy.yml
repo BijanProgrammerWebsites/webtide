@@ -9,4 +9,5 @@ jobs:
         uses: BijanProgrammerWebsites/hub/.github/workflows/deploy-nextjs.yml@master
         with:
             process-name: webtide
+            port: 3005
         secrets: inherit
