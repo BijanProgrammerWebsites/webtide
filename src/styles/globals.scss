@@ -1,5 +1,5 @@
-@use "/src/styles/breakpoints";
-@use "/src/styles/utils";
+@use "@/styles/breakpoints";
+@use "@/styles/utils";
 
 :root {
     @include utils.define-batch(((--box-shadow-blur, 6, 6, 8), (--scroll-padding, 20, 40, 40)));

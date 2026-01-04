@@ -1,5 +1,5 @@
-@use "/src/styles/breakpoints";
-@use "/src/styles/utils";
+@use "@/styles/breakpoints";
+@use "@/styles/utils";
 
 .screenshots {
     @include utils.define-batch(
@@ -16,8 +16,12 @@
     position: relative;
 
     display: grid;
-    grid-template-columns: [image-start] var(--large-offset) [shadow-start] 1fr [image-end] var(--small-offset) [shadow-end];
-    grid-template-rows: [shadow-start] var(--small-offset) [image-start] 1fr [shadow-end] var(--small-offset) [image-end];
+    grid-template-columns:
+        [image-start] var(--large-offset) [shadow-start] 1fr [image-end] var(--small-offset)
+        [shadow-end];
+    grid-template-rows:
+        [shadow-start] var(--small-offset) [image-start] 1fr [shadow-end] var(--small-offset)
+        [image-end];
 
     touch-action: pan-y;
 

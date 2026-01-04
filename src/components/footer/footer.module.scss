@@ -1,5 +1,5 @@
-@use "/src/styles/breakpoints";
-@use "/src/styles/utils";
+@use "@/styles/breakpoints";
+@use "@/styles/utils";
 
 .footer {
     @include utils.define-batch(

@@ -1,4 +1,4 @@
-@use "/src/styles/utils";
+@use "@/styles/utils";
 
 .details {
     @include utils.define-batch([(--details-gap, null, 16, 28)]);

@@ -1,6 +1,6 @@
-@use "/src/styles/breakpoints";
-@use "/src/styles/colors";
-@use "/src/styles/utils";
+@use "@/styles/breakpoints";
+@use "@/styles/colors";
+@use "@/styles/utils";
 
 .container {
     @include utils.define-batch(
@@ -25,7 +25,9 @@
     );
 
     display: grid;
-    grid-template-columns: [form-start] var(--large-offset) [shadow-start] 1fr [form-end] var(--small-offset) [shadow-end];
+    grid-template-columns:
+        [form-start] var(--large-offset) [shadow-start] 1fr [form-end] var(--small-offset)
+        [shadow-end];
     grid-template-rows: [shadow-start] var(--small-offset) [form-start] 1fr [shadow-end] var(--small-offset) [form-end];
 
     .shadow {

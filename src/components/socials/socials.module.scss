@@ -1,6 +1,6 @@
-@use "/src/styles/breakpoints";
-@use "/src/styles/colors";
-@use "/src/styles/utils";
+@use "@/styles/breakpoints";
+@use "@/styles/colors";
+@use "@/styles/utils";
 
 .socials {
     @include utils.define-batch(((--socials-gap, 12, 12, 16), (--social-size, 18, 18, 24)));

@@ -1,6 +1,6 @@
-@use "/src/styles/breakpoints";
-@use "/src/styles/colors";
-@use "/src/styles/utils";
+@use "@/styles/breakpoints";
+@use "@/styles/colors";
+@use "@/styles/utils";
 
 .subtitle {
     @include utils.define-batch([(--subtitle-font-size, 12, 12, 18)]);

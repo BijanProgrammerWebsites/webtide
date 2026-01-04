@@ -1,6 +1,6 @@
-@use "/src/styles/breakpoints";
-@use "/src/styles/colors";
-@use "/src/styles/utils";
+@use "@/styles/breakpoints";
+@use "@/styles/colors";
+@use "@/styles/utils";
 
 .contact-us {
     @include utils.define-batch(

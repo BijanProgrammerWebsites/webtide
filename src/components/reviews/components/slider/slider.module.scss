@@ -1,6 +1,6 @@
-@use "/src/styles/breakpoints";
-@use "/src/styles/colors";
-@use "/src/styles/utils";
+@use "@/styles/breakpoints";
+@use "@/styles/colors";
+@use "@/styles/utils";
 
 .slider {
     @include utils.define-batch(
@@ -22,7 +22,9 @@
     overflow: hidden;
 
     display: grid;
-    grid-template-columns: [shadow-start] var(--items-offset) [items-start] 1fr [shadow-end] var(--shadow-offset) [items-end];
+    grid-template-columns:
+        [shadow-start] var(--items-offset) [items-start] 1fr [shadow-end] var(--shadow-offset)
+        [items-end];
     grid-template-rows: [shadow-start] 1fr [items-start] auto [items-end] 1fr [shadow-end];
 
     min-block-size: var(--slider-min-block-size);
