@@ -33,17 +33,9 @@ type Props = {
 export default function SliderComponent({reviews}: Props): ReactElement {
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
-    const timeout = useRef<number>();
+    const timeout = useRef<number | undefined>(undefined);
 
     const duplicatedReviews: Review[] = [...reviews, ...reviews];
-
-    useEffect(() => {
-        resetTimeout();
-
-        return (): void => {
-            window.clearTimeout(timeout.current);
-        };
-    }, [activeIndex]);
 
     const resetTimeout = (): void => {
         window.clearTimeout(timeout.current);
@@ -74,6 +66,14 @@ export default function SliderComponent({reviews}: Props): ReactElement {
     const duplicatedReviewClickHandler = async (index: number): Promise<void> => {
         setActiveIndex(index);
     };
+
+    useEffect(() => {
+        resetTimeout();
+
+        return (): void => {
+            window.clearTimeout(timeout.current);
+        };
+    }, [activeIndex]);
 
     return (
         <div className={styles.slider}>

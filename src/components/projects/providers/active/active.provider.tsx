@@ -32,15 +32,7 @@ type Props = PropsWithChildren & {
 export default function ActiveProvider({itemsCount, children}: Props): ReactElement {
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
-    const timeout = useRef<number>();
-
-    useEffect(() => {
-        resetTimeout();
-
-        return (): void => {
-            window.clearTimeout(timeout.current);
-        };
-    }, [activeIndex]);
+    const timeout = useRef<number | undefined>(undefined);
 
     const resetTimeout = (): void => {
         window.clearTimeout(timeout.current);
@@ -65,6 +57,14 @@ export default function ActiveProvider({itemsCount, children}: Props): ReactElem
             setActiveIndex((old) => old + 1);
         }
     };
+
+    useEffect(() => {
+        resetTimeout();
+
+        return (): void => {
+            window.clearTimeout(timeout.current);
+        };
+    }, [activeIndex]);
 
     return (
         <ActiveContext.Provider value={{activeIndex: activeIndex, setActiveIndex: setActiveIndex, goBack, goNext}}>
